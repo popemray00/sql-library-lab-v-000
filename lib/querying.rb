@@ -3,8 +3,10 @@ def select_books_titles_and_years_in_first_series_order_by_year
 end
 
 def select_name_and_motto_of_char_with_longest_motto
-  "SELECT characters.name, characters.motto FROM characters OREDER BY MAX(motto) LIMIT 1";
-end
+  "SELECT name, motto FROM characters WHERE length(motto) = ( SELECT MAX(length(motto)) FROM characters )" ;
+endselect name from daTable
+where length(name) =
+( select max(length(name)) from daTable )
 
 
 def select_value_and_count_of_most_prolific_species
